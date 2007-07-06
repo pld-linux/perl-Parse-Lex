@@ -9,11 +9,12 @@ Summary:	perlmodule
 #Summary(pl):	
 Name:		perl-Parse-Lex
 Version:	2.15
-Release:	0.1
+Release:	0.2
 License:	x
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/P/PV/PVERD/%{pdir}%{pnam}-%{version}.tar.gz
 # Source0-md5:	aeb0bb36454485d28214aad0907d5c92
+Patch0:		perl-Parse-Lex-strict.patch
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 %if %{with tests}
@@ -29,6 +30,7 @@ BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %prep
 %setup -q -n %{pdir}%{pnam}-%{version}
+%patch0 -p1
 
 %build
 %{__perl} Makefile.PL \
