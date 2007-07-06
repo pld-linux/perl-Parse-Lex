@@ -16,3 +16,11 @@ diff -Nur ParseLex-2.15/lib/Parse/Template.pm ParseLex-2.15.x/lib/Parse/Template
      { package DB;		# what is the part name?
        @DB::caller = caller(2);	# why is this needed? /ee?
        @DB::caller = caller(1);
+--- ParseLex-2.15/t/test4.t~	2007-07-06 13:23:31.000000000 +0200
++++ ParseLex-2.15/t/test4.t	2007-07-06 13:26:56.000000000 +0200
+@@ -55,4 +55,4 @@
+ [main::lexer|Parse::CLex] Token read (NEWLINE, \n): 
+ 
+ [main::lexer|Parse::CLex] Token read (ERROR, .*): this is an invalid string with a "" in it"
+-can't analyze: "this is an invalid string with a "" in it"" at examples/ctokenizer.pl line 17, <DATA> chunk 4.
++can't analyze: "this is an invalid string with a "" in it"" at examples/ctokenizer.pl line 17, <DATA> line 4.
