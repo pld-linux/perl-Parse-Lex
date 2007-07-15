@@ -5,28 +5,28 @@
 %include	/usr/lib/rpm/macros.perl
 %define		pdir	Parse
 %define		pnam	Lex
-Summary:	perlmodule
-#Summary(pl):	
+Summary:	Parse::Lex - generator of lexical analyzers
+Summary(pl.UTF-8):	Parse::Lex - generator analizatorów leksykalnych
 Name:		perl-Parse-Lex
 Version:	2.15
 Release:	0.2
-License:	x
+# same as perl
+License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/P/PV/PVERD/%{pdir}%{pnam}-%{version}.tar.gz
 # Source0-md5:	aeb0bb36454485d28214aad0907d5c92
-Patch0:		perl-Parse-Lex-strict.patch
+Patch0:		%{name}-strict.patch
+URL:		http://search.cpan.org/dist/ParseLex/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
-%if %{with tests}
-%endif
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
+The classes Parse::Lex and Parse::CLex create lexical analyzers.
 
-
-# %description -l pl
-# TODO
+%description -l pl.UTF-8
+Klasy Parse::Lex i Parse::CLex tworzą analizatory leksykalne.
 
 %prep
 %setup -q -n %{pdir}%{pnam}-%{version}
@@ -55,6 +55,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes doc README
 %{perl_vendorlib}/Parse/*.pm
-#%{perl_vendorlib}/Parse/Lex/
 %{_mandir}/man3/*
 %{_examplesdir}/%{name}-%{version}
