@@ -2,7 +2,6 @@
 # Conditional build:
 %bcond_without	tests		# do not perform "make test"
 #
-%include	/usr/lib/rpm/macros.perl
 %define		pdir	Parse
 %define		pnam	Lex
 Summary:	Parse::Lex - generator of lexical analyzers
